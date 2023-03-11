@@ -1,0 +1,20 @@
+<div class="card">
+    <header class="card-header">
+        <p class="card-header-title">
+            Add A Task
+        </p>
+    </header>
+    <div class="card-content">
+        <form [formGroup]="formTask" (ngSubmit)="addTask()">
+            <div class="control">
+                <input class="input mb-4" type="text" placeholder="Title Task" formControlName="title">
+            </div>
+            <div class="control">
+                <textarea class="textarea mb-4" placeholder="Normal textarea" formControlName="description"></textarea>
+            </div>
+            <div class="control">
+                <button class="button is-primary is-fullwidth" type="submit" [disabled]="!formTask.valid">Add Task</button>
+            </div>
+        </form>
+    </div>
+</div>

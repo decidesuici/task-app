@@ -1,0 +1,17 @@
+<div class="card mb-3">
+    <header class="card-header">
+        <p class="card-header-title">
+            {{ task.title }}
+        </p>
+        <div class="buttons has-addons mr-3">
+            <button class="button is-primary" (click)="task.hide = !task.hide" *ngIf="task.hide">Show</button>
+            <button class="button is-primary" (click)="task.hide = !task.hide" *ngIf="!task.hide">Hide</button>
+            <button class="button is-danger" (click)="deleteTask(task)">Delete</button>
+        </div>
+    </header>
+    <div class="card-content" [hidden]="task.hide">
+        <div class="content">
+            {{ task.description }}
+        </div>
+    </div>
+</div>
